@@ -1,0 +1,22 @@
+{
+  "name": "temp-react-ts",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 3000",
+    "build": "tsc && vite build"
+  },
+  "dependencies": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "wouter": "2.12.1"
+  },
+  "devDependencies": {
+    "@types/react": "18.2.15",
+    "@types/react-dom": "18.2.7",
+    "@vitejs/plugin-react": "4.0.3",
+    "typescript": "5.0.2",
+    "vite": "4.4.5"
+  }
+}
