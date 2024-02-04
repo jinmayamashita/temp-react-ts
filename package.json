@@ -10,7 +10,7 @@
   "dependencies": {
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "wouter": "2.12.1"
+    "wouter": "3.0.0"
   },
   "devDependencies": {
     "@types/react": "18.2.52",
