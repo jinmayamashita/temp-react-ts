@@ -26,3 +26,11 @@ jobs:
 
       - name: Build
         run: pnpm build
+
+      - name: Check types
+        run: pnpm type
+
+      - name: Test
+        # https://vitest.dev/guide/cli
+        # Will enter the watch mode in development environment and run mode in CI automatically.
+        run: pnpm test
