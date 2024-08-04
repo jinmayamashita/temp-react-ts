@@ -1,4 +1,4 @@
-name: Test Action
+name: Tests
 
 on:
   - push
@@ -24,11 +24,17 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Build
+      - name: Check build
         run: pnpm build
 
       - name: Check types
         run: pnpm type
+
+      - name: Check lint
+        run: pnpm lint
+
+      - name: Check format
+        run: pnpm format
 
       - name: Test
         # https://vitest.dev/guide/cli
