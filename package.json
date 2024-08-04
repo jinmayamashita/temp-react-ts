@@ -5,7 +5,7 @@
 	"type": "module",
 	"scripts": {
 		"dev": "vite --port 3000",
-		"lint": "eslint",
+		"lint": "eslint --ignore-pattern \"dist/*\"",
 		"type": "tsc --noEmit",
 		"format": "biome format",
 		"test": "vitest",
