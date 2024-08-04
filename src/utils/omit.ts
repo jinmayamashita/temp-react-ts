@@ -1,13 +1,13 @@
-export function omit(obj: { [key: string]: any }) {
-  const newObj: { [key: string]: any } = {};
+export function omit(obj: Record<string, unknown>) {
+	const newObj: Record<string, unknown> = {};
 
-  Object.keys(obj).forEach((key) => {
-    const value = obj[key];
+	Object.keys(obj).forEach((key) => {
+		const value = obj[key];
 
-    if (value !== undefined) {
-      newObj[key] = value;
-    }
-  });
+		if (value !== undefined) {
+			newObj[key] = value;
+		}
+	});
 
-  return newObj;
+	return newObj;
 }

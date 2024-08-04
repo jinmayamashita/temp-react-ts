@@ -4,51 +4,51 @@ import { memoryLocation } from "wouter/memory-location";
 import Routes from "./routes";
 
 describe("Routes", () => {
-  test("renders HomePage when path is /", () => {
-    const { hook, history } = memoryLocation({ path: "/", record: true });
+	test("renders HomePage when path is /", () => {
+		const { hook, history } = memoryLocation({ path: "/", record: true });
 
-    render(
-      <Router hook={hook}>
-        <Routes />
-      </Router>
-    );
+		render(
+			<Router hook={hook}>
+				<Routes />
+			</Router>,
+		);
 
-    history.push("/");
+		history.push("/");
 
-    expect(screen.getByTestId("home-page")).toBeInTheDocument();
-  });
+		expect(screen.getByTestId("home-page")).toBeInTheDocument();
+	});
 
-  test("renders CountPage when path is /count", async () => {
-    const { hook, history, navigate } = memoryLocation({
-      path: "/",
-      record: true,
-    });
+	test("renders CountPage when path is /count", async () => {
+		const { hook, history, navigate } = memoryLocation({
+			path: "/",
+			record: true,
+		});
 
-    render(
-      <Router hook={hook}>
-        <Routes />
-      </Router>
-    );
+		render(
+			<Router hook={hook}>
+				<Routes />
+			</Router>,
+		);
 
-    expect(history).toStrictEqual(["/"]);
+		expect(history).toStrictEqual(["/"]);
 
-    await act(async () => navigate("/count"));
+		await act(async () => navigate("/count"));
 
-    expect(history).toStrictEqual(["/", "/count"]);
-    expect(screen.getByTestId("count-page")).toBeInTheDocument();
-  });
+		expect(history).toStrictEqual(["/", "/count"]);
+		expect(screen.getByTestId("count-page")).toBeInTheDocument();
+	});
 
-  test("renders 404 page when path is not found", async () => {
-    const { hook, navigate } = memoryLocation({ path: "/", record: true });
+	test("renders 404 page when path is not found", async () => {
+		const { hook, navigate } = memoryLocation({ path: "/", record: true });
 
-    render(
-      <Router hook={hook}>
-        <Routes />
-      </Router>
-    );
+		render(
+			<Router hook={hook}>
+				<Routes />
+			</Router>,
+		);
 
-    await act(async () => navigate("/invalid-path"));
+		await act(async () => navigate("/invalid-path"));
 
-    expect(screen.getByText("404, Not Found")).toBeInTheDocument();
-  });
+		expect(screen.getByText("404, Not Found")).toBeInTheDocument();
+	});
 });
